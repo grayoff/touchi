@@ -34,9 +34,18 @@ end
 function Touchi:update(dt)
   for key, widget in pairs(self.widgets) do
     local prev_down = widget.down
-    local mx, my = love.mouse.getPosition()
-    widget.down = widget:contains(mx, my)
+    local cur_down = false
     
+    local touches = love.touch.getTouches()
+    for i, id in ipairs(touches) do
+        local mx, my = love.touch.getPosition(id)
+        if widget:contains(mx, my) then
+          cur_down = true
+          break
+        end
+    end    
+    
+    widget.down = cur_down
     widget.pressed = widget.down and not prev_down
     widget.released = not widget.down and prev_down
     
