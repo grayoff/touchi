@@ -23,8 +23,8 @@ THE SOFTWARE.
 local Button = {}
 Button.__index = Button
 
-Button.color_up = {255, 255, 255, 32}
-Button.color_down = {255, 255, 255, 64}
+Button.color_up = {1, 1, 1, 0.15}
+Button.color_down = {1, 1, 1, 0.25}
 Button.rx = 5
 
 function Button.new(x, y, w, h)

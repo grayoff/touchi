@@ -23,8 +23,8 @@ THE SOFTWARE.
 local CircleButton = {}
 CircleButton.__index = CircleButton
 
-CircleButton.color_up = {255, 255, 255, 32}
-CircleButton.color_down = {255, 255, 255, 64}
+CircleButton.color_up = {1, 1, 1, 0.15}
+CircleButton.color_down = {1, 1, 1, 0.25}
 
 function CircleButton.new(x, y, r)
   local self = {}
